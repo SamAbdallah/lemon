@@ -1,0 +1,41 @@
+#form1{
+    display: flex;
+    flex-direction: column;
+    background-color: darkslategray;
+    width: 80%;
+    align-items: center;
+    border-radius: 20px;
+}
+#title{
+    color: gold;
+}
+
+.label1{
+    color: white;
+    margin-bottom: 10px;
+}
+#text{
+    color:white;
+}
+.input1{
+    height: 20px;
+    width: 200px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid gold;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+#submit{
+    height: 40px;
+    width: 200px;
+    background-color: gold;
+    border: 1px solid gold;
+    border-radius: 20px;
+    font-weight: bolder;
+}
