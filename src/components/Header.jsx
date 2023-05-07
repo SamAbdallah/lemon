@@ -1,9 +1,8 @@
 import React from 'react'
 import './Header.css'
 import header from '../images/Logo.png' 
-import {Route,Link,Routes} from 'react-router-dom'
-import Main from './Main'
-import Booking from './Booking'
+import {Link} from 'react-router-dom'
+
 
 function Header() {
 

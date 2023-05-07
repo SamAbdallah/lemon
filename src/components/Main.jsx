@@ -2,7 +2,6 @@ import React from 'react'
 import './Main.css'
 import photo from '../images/Hero image.png'
 import bruschetta from '../images/Bruschetta.png'
-import Header from './Header'
 
 function Main() {
   return (
