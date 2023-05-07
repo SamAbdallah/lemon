@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from './Header'
 import './Main.css'
 import photo from '../images/Hero image.png'
 import bruschetta from '../images/Bruschetta.png'
+import Header from './Header'
 
 function Main() {
   return (
+ 
     <div id='conatiner'> 
-        <Header/>
         <div id='intro'>
             <div id='info'>
                 <h1 id='title'>Little Lemon</h1>
