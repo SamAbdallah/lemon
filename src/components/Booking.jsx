@@ -1,29 +1,56 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import './Booking.css'
 import grilled from '../images/Grilled fish.png'
 import greek from '../images/Greek salad.png'
+import { BookingContext } from '../Context/BookingContext';
 
 function Booking() {
+  const [time, setTime, availableTime, setAvailableTime] = useContext(BookingContext);
+
+  // console.log(upAvailableTime)
+
+
   const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
   const [numPeople, setNumPeople] = useState('');
   const [occassion, setOccassion] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name,setName]=useState('')
-  
+      console.log(availableTime)
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(time)
   };
-  const handleTimeChange=(event)=>{
-    event.preventDefault()
-    setTime(event.target.value)
+  const handleTimeChange = (event) => {
+    event.preventDefault();
+    const selectedTime = event.target.value;
+    setTime(selectedTime);
+    setAvailableTime(prevAvailableTime => {
+      const newAvailableTime = prevAvailableTime.filter(item => item !== selectedTime);
+      console.log(availableTime)
+
+      return newAvailableTime;
+    }
+    
+    );
+  };
+
+  function DropdownOptions(list1) {
+    const options = list1.items.map((item) =>
+      <option key={item}>{item}</option>
+    );
+    return options;
   }
+  
+
+  
 
   return (
     <div  id='form1'>
 
       <div className='intro'>
+        <h1>{time}</h1>
+
         <h1 id='title'>Little Lemon</h1>
         <h2 className='text'>Chicago</h2><br/><br/>
         <h1 className='text'>Find a Table For Your Occasion!!</h1>
@@ -46,12 +73,9 @@ function Booking() {
   <div className='container'>
     <label  className='label1'>Choose time</label>
     <select  className='input1'  value={time} onChange={handleTimeChange}>
-       <option value="17:00">17:00</option>
-       <option value="18:00">18:00</option>
-       <option value="19:00">19:00</option>
-       <option value="20:00">20:00</option>
-       <option value="21:00">21:00</option>
-       <option value="22:00">22:00</option>
+
+       <DropdownOptions items={availableTime} />
+
     </select>
   </div> 
 

@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import './Main.css'
 import photo from '../images/Hero image.png'
 import bruschetta from '../images/Bruschetta.png'
 import {Link} from 'react-router-dom'
+import { BookingContext } from '../Context/BookingContext';
+
 
 function Main() {
+    const [ time, setTime] = useContext(BookingContext);
+    const [ AvailableTime, setAvailableTime] = useContext(BookingContext);
+
+
   return (
  
     <div id='conatiner'> 
@@ -18,6 +24,7 @@ function Main() {
             <div id='imageConatiner'>  <img src={photo} className='photo' alt=''/></div>
         </div>
         <div id='MenuHeader'><h1 >This Week Specials!</h1></div>
+        <h1>{time}</h1>
 
         <div id='itemsConatiner'>
             <div id='item'>
