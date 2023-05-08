@@ -2,6 +2,7 @@ import React from 'react'
 import './Main.css'
 import photo from '../images/Hero image.png'
 import bruschetta from '../images/Bruschetta.png'
+import {Link} from 'react-router-dom'
 
 function Main() {
   return (
@@ -12,7 +13,7 @@ function Main() {
                 <h1 id='title'>Little Lemon</h1>
                 <h2 className='text'>Chicago</h2>
                 <h3 className='text'>We are a family owned mediterranean restaurant,<br/> focused on traditional recipes served with a modern twist.</h3>
-                <button>Reserve a Table</button>
+                <Link to='/Booking'> <button>Reserve a Table</button></Link> 
             </div>
             <div id='imageConatiner'>  <img src={photo} className='photo' alt=''/></div>
         </div>
