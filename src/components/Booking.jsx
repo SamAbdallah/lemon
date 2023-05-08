@@ -5,7 +5,7 @@ import greek from '../images/Greek salad.png'
 import { BookingContext } from '../Context/BookingContext';
 
 function Booking() {
-  const [time, setTime, availableTime, setAvailableTime] = useContext(BookingContext);
+  const [time, setTime, AvailableTime, setAvailableTime] = useContext(BookingContext);
 
   // console.log(upAvailableTime)
 
@@ -15,7 +15,7 @@ function Booking() {
   const [occassion, setOccassion] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [name,setName]=useState('')
-      console.log(availableTime)
+      console.log(AvailableTime)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +27,7 @@ function Booking() {
     setTime(selectedTime);
     setAvailableTime(prevAvailableTime => {
       const newAvailableTime = prevAvailableTime.filter(item => item !== selectedTime);
-      console.log(availableTime)
+      console.log(AvailableTime)
 
       return newAvailableTime;
     }
@@ -74,7 +74,7 @@ function Booking() {
     <label  className='label1'>Choose time</label>
     <select  className='input1'  value={time} onChange={handleTimeChange}>
 
-       <DropdownOptions items={availableTime} />
+       <DropdownOptions items={AvailableTime} />
 
     </select>
   </div> 

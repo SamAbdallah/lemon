@@ -7,8 +7,11 @@ import { BookingContext } from '../Context/BookingContext';
 
 
 function Main() {
-    const [ time, setTime] = useContext(BookingContext);
-    const [ AvailableTime, setAvailableTime] = useContext(BookingContext);
+    const [ time, setTime, AvailableTime, setAvailableTime ] = useContext(BookingContext);    
+    console.log(time)
+    console.log(AvailableTime)
+
+ 
 
 
   return (
@@ -17,6 +20,8 @@ function Main() {
         <div id='intro'>
             <div id='info'>
                 <h1 id='title'>Little Lemon</h1>
+
+
                 <h2 className='text'>Chicago</h2>
                 <h3 className='text'>We are a family owned mediterranean restaurant,<br/> focused on traditional recipes served with a modern twist.</h3>
                 <Link to='/Booking'> <button>Reserve a Table</button></Link> 
