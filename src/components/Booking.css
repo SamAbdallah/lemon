@@ -92,3 +92,7 @@ select::selection {
 .f{
     padding: 10%;
 }  
+
+#button1:hover{
+    cursor: pointer;
+}
